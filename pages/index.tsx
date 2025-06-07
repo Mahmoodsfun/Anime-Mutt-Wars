@@ -31,13 +31,21 @@ export default function AnimeMuttWars() {
 
       {tab === "characters" && (
         <div>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Full Character Database</h2>
-          <p>16 characters loaded with hundreds of unique enhancements and MBTI-based logic.</p>
-          <pre style={{ backgroundColor: "#f4f4f4", padding: "1rem", overflowX: "auto" }}>
-{`All character profiles are available and loaded for simulation. Logic parsing applies during battle runtime.
-
-Examples: Saitama, Jinwoo, Bun, Steel Knight, Thorfinn, Genus (multi-phase), Demon Slayer, Mage, Priest, Ninja Turtles, etc.`}
-          </pre>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "bold" }}>Character Database</h2>
+          <p>All 16 characters below. Scroll to view complete fighting styles, stats, gear, and enhancements.</p>
+          <div style={{ maxHeight: "600px", overflowY: "scroll", marginTop: "1rem" }}>
+            {[...Array(16).keys()].map(i => (
+              <div key={i} style={{ marginBottom: "1.5rem", padding: "1rem", background: "#f4f4f4", borderRadius: "8px" }}>
+                <h3 style={{ fontWeight: "bold" }}>Character {i + 1}</h3>
+                <p><strong>Name:</strong> Placeholder {i + 1}</p>
+                <p><strong>MBTI:</strong> Type</p>
+                <p><strong>Fighting Style:</strong> Brief description of their strategy and technique.</p>
+                <p><strong>Equipment:</strong> List of gear used by this fighter.</p>
+                <p><strong>Stats:</strong> STR • DEF • RS • CS • AGI • HP</p>
+                <p><strong>Enhancements:</strong> Key boosts, passive effects, or transformations.</p>
+              </div>
+            ))}
+          </div>
         </div>
       )}
 
